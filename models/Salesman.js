@@ -1,6 +1,7 @@
 import {Schema, model} from "mongoose"
 
 const salesmanSchema = new Schema({
+  id : String,
   fname: String,
   lname : String,
   email: String,

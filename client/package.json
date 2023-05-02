@@ -12,6 +12,8 @@
     "react-router-dom": "^6.11.0",
     "react-scripts": "5.0.1",
     "react-select": "^5.7.2",
+    "react-simple-image-slider": "^2.4.1",
+    "react-slideshow-image": "^4.2.1",
     "sweetalert": "^2.1.2",
     "web-vitals": "^2.1.4"
   },
@@ -38,5 +40,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:5000"
 }

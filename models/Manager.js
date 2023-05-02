@@ -1,6 +1,8 @@
 import {Schema, model} from "mongoose"
 
+;
 const managerSchema = new Schema({
+
   fname: String,
   lname : String,
   email: String,

@@ -14,7 +14,7 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect("process.env.MONGODB_URL", () => {
+mongoose.connect("mongodb+srv://yashbomble:yash2002@cluster0.mt2buo2.mongodb.net/PMS", () => {
     console.log('Connected to MongoDB');
 })
 
@@ -79,7 +79,7 @@ app.post('/signup', async (req, res) => {
 
 
 app.post('/login', async (req, res) => {
-    const { email, password ,role} = req.body;
+    const { email, password } = req.body;
 
     if(!email || !password) {
         return res.json({
@@ -88,7 +88,7 @@ app.post('/login', async (req, res) => {
         })
     }
 
-    const existingUser = await User.findOne({ email: email, password: password ,role:role});
+    const existingUser = await User.findOne({ email: email, password: password });
 
     if(existingUser){
         return res.json({
@@ -109,7 +109,10 @@ app.post('/login', async (req, res) => {
 app.post('/addmanager',async(req,res)=>{
     const {fname,lname,email,password,phone} = req.body;
 
+
+
     const manager = new Manager({
+        
         fname: fname,
         lname: lname,
         email: email,
@@ -128,8 +131,10 @@ app.post('/addmanager',async(req,res)=>{
 
 app.post('/addpharmasist',async(req,res)=>{
     const {fname,lname,email,password,phone} = req.body;
-
+    let cout = 0;
+    let ID = cout+1;
     const pharmasist = new Pharmasist({
+        id : ID,
         fname: fname,
         lname: lname,
         email: email,
@@ -141,7 +146,7 @@ app.post('/addpharmasist',async(req,res)=>{
 
     res.json({
         success: true,
-        message: "Manager created successfully",
+        message: "Pharmasist created successfully",
         data: savedPharmasist
     })
 })
@@ -169,7 +174,11 @@ app.get('/viewmanager',async(req,res)=>{
 app.post('/addsalesman',async(req,res)=>{
     const {fname,lname,email,password,phone} = req.body;
 
+    let cout = 0;
+    let ID = cout+1;
+
     const salesman = new Salesman({
+        id : ID,
         fname: fname,
         lname: lname,
         email: email,

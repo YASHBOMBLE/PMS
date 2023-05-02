@@ -18,8 +18,7 @@ function Login() {
   async function loginUser() {
     const response = await axios.post('/login', {
       email: email,
-      password: password,
-      role : role
+      password: password
     })
     console.log(response.data)
     if (response.data.success) {
@@ -28,10 +27,11 @@ function Login() {
         title: "Success",
         text: response.data.message,
         icon: "success",
-        button: "Aww yiss!",
+        button: "Continue",
       });
       localStorage.setItem('currentUser', JSON.stringify(response.data.data));
-      window.location.href = "/"
+        window.location.href = "/"
+         
     }
     else {
       await swal({
@@ -53,13 +53,13 @@ function Login() {
           <div class="col-md-4 m-auto p-3" id="form_content"><br />
             <h3><center>Login Page</center></h3>
             <div class="form-group">
-              <input type="emai" class="form-control m-2" placeholder="Enter Email" />
+              <input type="emai" class="form-control m-2" placeholder="Enter Email"  value={email} onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div class="form-group">
-              <input type="password" class="form-control m-2" name="password" placeholder="Enter Password" />
+              <input type="password" class="form-control m-2" name="password" placeholder="Enter Password"  value={password} onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <Select options={userRole} id='class' placeholder='Select Role' className='m-2'  onChange={setRole}/>
-          <button class="btn btn-primary btn-sm login-wdth" >Login</button>
+          <button class="btn btn-primary btn-sm login-wdth" onClick={loginUser} >Login</button>
         </div>
         </div>
       </div>

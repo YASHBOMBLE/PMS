@@ -1,6 +1,7 @@
 import {Schema, model} from "mongoose"
 
 const pharmasistSchema = new Schema({
+  id : String,
   fname: String,
   lname : String,
   email: String,
