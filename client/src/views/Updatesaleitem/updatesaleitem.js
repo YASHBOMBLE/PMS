@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+/*import React,{useEffect} from 'react'
 import { loginRequired } from '../../util/LoginRequired';
 function updatesaleitem() {
      
@@ -11,4 +11,4 @@ function updatesaleitem() {
   )
 }
 
-export default updatesaleitem
+export default updatesaleitem*/

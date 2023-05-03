@@ -9,10 +9,10 @@ import { loginRequired } from '../../util/LoginRequired.js';
 
 function Home() {
 
-   
-  useEffect(()=>{
+
+  useEffect(() => {
     loginRequired();
-  },[])
+  }, [])
   const [currentManager, setAllManager] = useState([])
   const [currentPharmasist, setAllPharmasist] = useState([])
   const [currentSalesman, setAllSalesman] = useState([])
@@ -44,10 +44,10 @@ function Home() {
   }
 
 
- 
+
 
   function managerView() {
-    if (currentUser?.role == 'Manager' || currentUser?.role == 'Admin' ) {
+    if (currentUser?.role == 'Manager' || currentUser?.role == 'Admin') {
       return (
         <div>
           <div class="wrapper">
@@ -101,6 +101,11 @@ function Home() {
                   </ul>
                 </ul>
               </div>
+              <div className='col-md-10'>
+                
+                //Add here Some text
+
+              </div>
             </div>
           </div>
         </div>
@@ -139,30 +144,35 @@ function Home() {
                 <ul>
                   <li><i class="fa fa-table li-1" ></i><a
                     href="./index.html">Dashboard</a></li>
-                  
-                
-                  
+
+
+
                   <li><i class="fa fa-user-plus li-1" ></i><a>Manage Salesman</a>
                   </li>
                   <ul>
                     <li id="link5"><i class="fa fa-user-plus li-2" ></i><a
                       href="/salesman">Add Salesman</a></li>
-                      </ul>
-                  
-                    <ul>
+                  </ul>
+
+                  <ul>
                     <li id="link6"><i class="fa fa-pencil-square-o li-2" ></i><a href="/viewsalesman">View Salesman</a></li>
                   </ul>
                   <li><i class="fa fa-user-plus li-1" ></i><a>Upload Total Salieman  </a></li>
                   <ul>
-                        <li id="link3"><i class="fa fa-user-plus li-2" ></i><a
-                                href="/updatesaleitem">Update Sales Items</a></li>
+                    <li id="link3"><i class="fa fa-user-plus li-2" ></i><a
+                      href="/updatesaleitem">Update Sales Items</a></li>
 
-                    </ul>
+                  </ul>
                 </ul>
               </div>
+              <div className='col-md-10'>
+                
+                //Add here Some text
+
+              </div>
             </div>
-           
-            
+
+
           </div>
         </div>
       )
@@ -200,7 +210,7 @@ function Home() {
                 <ul>
                   <li><i class="fa fa-table li-1" ></i><a
                     href="./index.html">Dashboard</a></li>
-                  
+
 
                   <li><i class="fa fa-user-plus li-1" ></i><a>Manage
                     Pharmacist</a></li>
@@ -217,14 +227,19 @@ function Home() {
                     <li id="link6"><i class="fa fa-pencil-square-o li-2" ></i><a href="/viewsalesman">View Salesman</a></li>
                     <li id="link4"><i class="fa fa-pencil-square-o li-2"  ></i><a href=" ">Manage Prescription</a></li>
                   </ul>
-                  
+
                   <li><i class="fa fa-user-plus li-1" ></i><a href='/addprescription'>Add prescription</a>
-                    </li>
-                    <ul>
-                        <li id="link5"><i class="fa fa-user-plus li-2" ></i><a
-                                href="/viewprescription">View Prescription</a></li>
-                    </ul>
+                  </li>
+                  <ul>
+                    <li id="link5"><i class="fa fa-user-plus li-2" ></i><a
+                      href="/viewprescription">View Prescription</a></li>
+                  </ul>
                 </ul>
+              </div>
+              <div className='col-md-10'>
+                
+                //Add here Some text
+
               </div>
             </div>
           </div>

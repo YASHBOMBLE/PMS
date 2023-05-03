@@ -12,9 +12,9 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 2000;
 
-mongoose.connect("mongodb+srv://yashbomble:yash2002@cluster0.mt2buo2.mongodb.net/PMS", () => {
+mongoose.connect("Mongo url", () => {
     console.log('Connected to MongoDB');
 })
 
@@ -221,7 +221,7 @@ app.post('/addprescription',async(req,res)=>{
 
     res.json({
         success: true,
-        message: "Salesman created successfully",
+        message: "Prescription Added",
         data: savedPrescription
     })
 })
